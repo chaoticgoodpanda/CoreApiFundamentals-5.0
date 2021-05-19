@@ -31,6 +31,8 @@ namespace CoreCodeCamp.Data
             this.CreateMap<Speaker, SpeakerModel>()
                 .ReverseMap();
 
+            
+
         }
     }
 }

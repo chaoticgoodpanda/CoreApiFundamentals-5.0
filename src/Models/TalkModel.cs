@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using CoreCodeCamp.Data;
 
 namespace CoreCodeCamp.Models
 {
@@ -15,6 +15,7 @@ namespace CoreCodeCamp.Models
         public int Level { get; set; }
 
         public SpeakerModel Speaker {get; set;}
+        public Camp Camp { get; set; }
     }
 
 }

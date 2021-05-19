@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using AutoMapper;
 using System.Net.Mime;
 
@@ -22,6 +23,9 @@ namespace CoreCodeCamp
   {
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddControllers().AddNewtonsoftJson(options =>
+      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
       services.AddDbContext<CampContext>();
       services.AddScoped<ICampRepository, CampRepository>();
 
